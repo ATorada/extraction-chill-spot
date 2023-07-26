@@ -218,46 +218,46 @@ input[type="range"]::-moz-range-thumb {
 
 @keyframes fondo {
     0% {
-        background: #bac7ba;
+        background: #dee9de;
     }
 
     25% {
-        background: #a4b6a8;
+        background: #d5e2d5;
     }
 
     50% {
-        background: #98ad9d;
+        background: #c9dac9;
     }
 
     75% {
-        background: #a4b6a8;
+        background: #d5e2d5;
     }
 
     100% {
-        background: #bac7ba;
+        background: #dee9de;
     }
 
 }
 
 @keyframes fondoGatito {
     0% {
-        background: #e3ecdf;
+        background: #ebf3eb;
     }
 
     25% {
-        background: #cfdbd2;
+        background: #f0f8f0;
     }
 
     50% {
-        background: #c7dacb;
+        background: #f1f8f1;
     }
 
     75% {
-        background: #cfdbd2;
+        background: #f0f8f0;
     }
 
     100% {
-        background: #e3ecdf;
+        background: #ebf3eb;
     }
 
 }
