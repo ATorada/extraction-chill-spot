@@ -1,0 +1,336 @@
+/* General */
+@import url("https://fonts.googleapis.com/css2?family=Archivo&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Archivo:wght@600&family=Rye&display=swap");
+
+* {
+    user-select: none;
+    -webkit-user-drag: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    touch-action: manipulation;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #afb9ac;
+    animation: fondo 7s infinite linear;
+    font-family: "Archivo", sans-serif;
+}
+
+input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    cursor: pointer;
+    outline: none;
+    overflow: hidden;
+    border-radius: 16px;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+    height: 15px;
+    background: #f5efe7;
+    border-radius: 16px;
+}
+
+input[type="range"]::-moz-range-track {
+    height: 15px;
+    background: #f5efe7;
+    border-radius: 16px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 15px;
+    width: 15px;
+    background-color: #ece3d8;
+    border-radius: 50%;
+    border: 2px solid #462300 ;
+    box-shadow: -407px 0 0 400px #d4c3b1;
+}
+
+input[type="range"]::-moz-range-thumb {
+    height: 15px;
+    width: 15px;
+    background-color: #ece3d8;
+    border-radius: 50%;
+    border: 1px solid #462300 ;
+    box-shadow: -407px 0 0 400px #d4c3b1;
+}
+
+
+/* IDs */
+
+#registro {
+    position: relative;
+    display: table;
+}
+
+#registro span {
+    font-family: 'Arial', sans-serif;
+    font-size: 18px;
+    font-weight: normal;
+    margin: 0;
+    padding: 0;
+    color: #000000;
+    background-color: #ffffff;
+    padding: 5px 10px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    transition: opacity 1s ease-in-out;
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+#botones {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    animation: fadein 2s forwards;
+}
+
+#volumen {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 15px;
+    border-radius: 5px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+    opacity: 0;
+    animation: fadein 2s forwards;
+}
+
+#info {
+    opacity: 0;
+}
+
+#play,
+#anterior,
+#siguiente {
+    font-size: 50px;
+    margin-top: 20px;
+    color: black;
+    cursor: pointer;
+}
+
+#anterior:active,
+#siguiente:active {
+    transform: scale(0.9);
+}
+
+#play:hover,
+#anterior:hover,
+#siguiente:hover,
+#sonidoIcono:hover {
+    color: #f5efe7;
+    transform: scale(1.1);
+}
+
+#gatito {
+    transition: opacity 1s ease-in-out;
+}
+
+#icono {
+    font-weight: bold;
+    font-size: 40px;
+    color: black;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+#progreso {
+    width: 20%;
+    opacity: 0;
+    animation: fadein 2s forwards;
+    margin-bottom: 20px;
+    transition: width 1s ease-in-out;
+}
+
+#sonido {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+    animation: fadein 2s forwards;
+}
+
+#sonidoIcono {
+    color: #462300;
+    cursor: pointer;
+}
+
+#corazones {
+    animation: fadein 2s forwards;
+    z-index: 1;
+}
+
+/* Clases */
+
+.container {
+    position: relative;
+    padding: 10px;
+    height: 300px;
+    width: 300px;
+    box-shadow: 0 0 10px 10px rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    animation: fondoGatito 5s infinite linear, girar 5s infinite linear;
+    cursor: cell;
+}
+
+.corazon {
+    position: absolute;
+    animation: corazon 2s infinite linear;
+    pointer-events: none;
+    transition: opacity 1s ease-in-out;
+}
+
+.hidden {
+    display: hidden;
+}
+
+
+/* Animaciones */
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fondo {
+    0% {
+        background: #bac7ba;
+    }
+
+    25% {
+        background: #a4b6a8;
+    }
+
+    50% {
+        background: #98ad9d;
+    }
+
+    75% {
+        background: #a4b6a8;
+    }
+
+    100% {
+        background: #bac7ba;
+    }
+
+}
+
+@keyframes fondoGatito {
+    0% {
+        background: #e3ecdf;
+    }
+
+    25% {
+        background: #cfdbd2;
+    }
+
+    50% {
+        background: #c7dacb;
+    }
+
+    75% {
+        background: #cfdbd2;
+    }
+
+    100% {
+        background: #e3ecdf;
+    }
+
+}
+
+@keyframes girar {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes corazon {
+    0% {
+        transform: scale(1) rotate(0deg);
+    }
+
+    25% {
+        font-size: 25px;
+        transform: scale(1.5) rotate(360deg);
+    }
+
+    50% {
+        font-size: 30px;
+        transform: scale(2) rotate(720deg);
+    }
+
+    100% {
+        font-size: 25px;
+        transform: scale(1) rotate(0deg);
+    }
+}
+
+@keyframes corazonVersionMovil {
+    0% {
+        transform: scale(1) rotate(0deg);
+    }
+
+    25% {
+        font-size: 10px;
+        transform: scale(1.5) rotate(360deg);
+    }
+
+    50% {
+        font-size: 20px;
+        transform: scale(2) rotate(720deg);
+    }
+
+    100% {
+        font-size: 10px;
+        transform: scale(1) rotate(0deg);
+    }
+}
+
+
+/* Media Queries */
+
+@media (max-width: 600px) {
+    #progreso {
+        width: 90%;
+    }
+    .corazon {
+        animation: corazonVersionMovil 2s infinite linear;
+    }
+    #registro{
+        height: 55px;
+    }
+}
+
+@media (min-width: 600px) and (max-width: 1500px) {
+    #progreso {
+        width: 500px;
+    }
+}
