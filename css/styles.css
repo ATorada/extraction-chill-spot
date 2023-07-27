@@ -22,6 +22,7 @@ body {
     background-color: #afb9ac;
     animation: fondo 7s infinite linear;
     font-family: "Archivo", sans-serif;
+    border: 5px solid #462300;
 }
 
 input[type="range"] {
@@ -79,8 +80,8 @@ input[type="range"]::-moz-range-thumb {
     font-weight: normal;
     margin: 0;
     padding: 0;
-    color: #000000;
-    background-color: #ffffff;
+    color: #462300;
+    background-color: #f8f3ee;
     padding: 5px 10px;
     border-radius: 10px;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
@@ -135,7 +136,8 @@ input[type="range"]::-moz-range-thumb {
 #play:hover,
 #anterior:hover,
 #siguiente:hover,
-#sonidoIcono:hover {
+#sonidoIcono:hover,
+#shuffle:hover {
     color: #f5efe7;
     transform: scale(1.1);
 }
@@ -144,12 +146,19 @@ input[type="range"]::-moz-range-thumb {
     transition: opacity 1s ease-in-out;
 }
 
+#iconoContainer {
+    display: table;
+}
+
 #icono {
     font-weight: bold;
     font-size: 40px;
     color: black;
     opacity: 0;
     transition: opacity 1s ease-in-out;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
 }
 
 #progreso {
@@ -169,15 +178,22 @@ input[type="range"]::-moz-range-thumb {
     animation: fadein 2s forwards;
 }
 
-#sonidoIcono {
-    color: #462300;
-    cursor: pointer;
+#shuffle {
+    animation: fadein 2s forwards;
+    font-size: 30px;
 }
 
 #corazones {
     animation: fadein 2s forwards;
     z-index: 1;
 }
+
+#sonidoIcono,
+.shuffle {
+    color: #462300;
+    cursor: pointer;
+}
+
 
 /* Clases */
 
@@ -201,6 +217,11 @@ input[type="range"]::-moz-range-thumb {
 
 .hidden {
     display: hidden;
+}
+
+.shuffle-active {
+    color: #f5efe7;
+    cursor: pointer;
 }
 
 

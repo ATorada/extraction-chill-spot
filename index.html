@@ -15,9 +15,11 @@
 <body>
     <div id="corazones" class="hidden"></div>
     <audio id="musica">
-        <source src="music/ghibli_vibes.mp3" type="audio/mpeg">
+        <source src="music/A Kind Of Magic - Remastered 2011.mp3" type="audio/mpeg">
     </audio>
-    <span id="icono"><b>Ghibli fantasy</b> ☔</span>
+    <div id="iconoContenedor">
+        <span id="icono"><b>A Kind Of Magic - Remastered 2011</b> ☔</span>
+    </div>
     <div id="botones">
         <span onclick="cambiarCancion('anterior')" id="anterior">
             <i class="fas fa-backward"></i>
@@ -29,6 +31,7 @@
             <i class="fas fa-forward"></i>
         </span>
     </div>
+    <i class="fas fa-shuffle shuffle" id="shuffle"></i>
     <div id="sonido">
         <i id="sonidoIcono" class="fas fa-volume-high"></i>
         <input type="range" id="volumen" min="0" max="0.1" step="0.01" value="0.1">
